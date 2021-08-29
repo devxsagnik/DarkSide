@@ -30,7 +30,7 @@ module.exports = {
 		const msg = await message.channel.send(new MessageEmbed()
 		.setTitle(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
 		.setDescription(`Searching lyrics with song name \`\`\`${song}\`\`\``)
-    .setColor(Color)
+    .setColor("RANDOM")
     .setTimestamp()
     );
 		
