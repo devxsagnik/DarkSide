@@ -1,0 +1,41 @@
+{
+  "name": "darkside",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "@ksoft/api": "^3.1.9",
+    "ascii-table": "0.0.9",
+    "canvas": "^2.8.0",
+    "colors": "^1.4.0",
+    "common-tags": "^1.8.0",
+    "deezer-public-api": "^1.0.4",
+    "discord-together": "^1.1.53",
+    "discord.js": "^12.5.3",
+    "discord.js-pagination": "^1.0.3",
+    "distube": "2.8.15",
+    "dotenv": "^10.0.0",
+    "enmap": "^5.8.7",
+    "express": "^4.17.1",
+    "ffmpeg-static": "^4.4.0",
+    "fs": "0.0.1-security",
+    "https-proxy-agent": "^5.0.0",
+    "is-absolute-url": "^4.0.1",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "old-wio.db": "^4.0.10",
+    "path": "^0.12.7",
+    "soundcloud-downloader": "^1.0.0",
+    "soundcloud-scraper": "^5.0.2",
+    "spotify-url-info": "^2.2.3",
+    "ytdl-core": "^4.9.1"
+  }
+}
