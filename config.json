@@ -1,6 +1,7 @@
 {
   "everyoneMention": false,
   "hostedBy": true,
+  "Color": "RANDOM",
   "mongoURI": "mongodb+srv://Felix:pubgmobile2005@cluster0.k4x6p.mongodb.net/chatbot?retryWrites=true&w=majority",
   "cookie": "SID=_AervEYVvwM6WegChqBZ6aoBek33z72Ei3Ovt7oh48gL2YfZfAleLiN7Gl2RSk32aapOnA.; Secure-3PSID=_AervEYVvwM6WegChqBZ6aoBek33z72Ei3Ovt7oh48gL2YfZI1o5P8W6NL31TgF-7eXnLg.; HSID=AEalePzJH0jFCejcb; SSID=Ao9lLgSjCSW25LQd3; APISID=B1DyYhCtZwGkOWDj/A_c8u0W7gdD1TM8oo; SAPISID=MAlrMBSl5jr0C_vk/AwKzmmqragn12GRwg; Secure-3PAPISID=MAlrMBSl5jr0C_vk/AwKzmmqragn12GRwg; VISITOR_INFO1_LIVE=c2zEQWi3n5Y; LOGIN_INFO=AFmmF2swRAIgam4DNVGyce6KOceC9dHN1cxTKfRtlOs3wTkntGBfK7sCIH9Id-iMXd9ipo5OXMi-XaLq2myQJDff6y_wmdG0uWg0:QUQ3MjNmeXNzVmNmUm0ybTlDR0liVVR2NzloT1pGMFhmRURFWFZpV1lzeW41a1hLeVJ6SWRwRVVaNW80X3A1TTZlRHlZVDBINnhRWnV2elh4d2Q0YlpHaDF6SHRxMjBST1lja3NrcXA0VzBoYU96bHZCYVhHTUQyTjh4OVhLaHBCUWZxR2VkSGNFSHJkRWstU3p0aDh4QWJUMzlzNXpxMzlB; SIDCC=AJi4QfEpHsxEiyRftuSEfAQa4xk6u7xv_4hlCvdmk43x5R1M58c6g-rqpVwB9Lnl0PEnFKBv; __Secure-3PSIDCC=AJi4QfERPKtm-4QOsmFilOXXz8iZLahLnaZewhJaTKYBVjy3DQaUwBvlZ0_E13phcHO_aNMRxA; YSC=u8wzhlYNDqY; PREF=f4=4000000&tz=Asia.Kolkata",
     "colors": {
@@ -52,5 +53,5 @@
     "mcompand": "mcompand",
     "earrape": "bass=g=50"
   },
-  "Default_Prefix": "*"
+  "Default_Prefix": "D!"
 }
