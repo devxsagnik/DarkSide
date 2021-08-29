@@ -19,8 +19,9 @@ const db = require("old-wio.db");
 const Canvas = require("canvas");
 const DisTube = require("distube");
 const path = require("path");
+const { MessageAttachment } = require("discord.js");
 const https = require('https-proxy-agent');
-
+const { Default_Prefix, Color } = require("./config.json");
 const proxy = 'http://123.123.123.123:8080';
 const agent = https(proxy);
 const client = new Discord.Client({
@@ -115,21 +116,74 @@ client.on('ready', async () => {
 });
 
 client.on('message', async message => {
-  let PREFIX = 'D!';
+  if (message.author.bot || !message.guild || message.webhookID) return;
 
-  if (!message.content.startsWith(PREFIX) || message.author.bot) return;
-  if (!message.guild) return;
-  if (!message.member)
-    message.member = await message.guild.fetchMember(message);
+  let Prefix = await db.fetch(`Prefix_${message.guild.id}`);
+  if (!Prefix) Prefix = client.config.Default_Prefix;
 
-  const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
-  const cmd = args.shift().toLowerCase();
-  if (cmd.length == 0) return;
-  let command = client.commands.get(cmd);
-   if (!command) command = client.commands.get(client.aliases.get(cmd));
-      if (command) command.run(client, message, args);
+  const mentionRegex = RegExp(`^<@!?${client.user.id}>$`);
 
-  //Make command uppercase so !help and !Help both work (including all other commands
+  if (message.content.match(mentionRegex)) {
+    message.channel.send(
+      new Discord.MessageEmbed()
+        .setThumbnail(`${message.author.displayAvatarURL({ dynamic: true })}`)
+        .setDescription(`Hey <@${message.author.id}>, My prefix for this guild is \`\`\`${Prefix}\`\`\`.Use \`\`\`${Prefix}help\`\`\` or <@873832093078143037>help to get a list of commands`)
+        .setColor(Color)
+        .setFooter(`Requested by ${message.author.username}`)
+        .setTimestamp()
+    )
+  };
+
+  //checking for mentions
+
+  const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(Prefix)})\\s*`);
+
+  if (!prefixRegex.test(message.content)) return;
+
+  const [, matchedPrefix] = message.content.match(prefixRegex);
+  Prefix = matchedPrefix;
+
+
+  if (!message.content.startsWith(Prefix)) return;
+
+  if (!message.guild.me.permissionsIn(message.channel).has("EMBED_LINKS"))
+    return message.reply("**:x: I am missing the Permission to `EMBED_LINKS`**");
+
+
+  if (client.settings.get(message.guild.id, `botchannel`).toString() !== "") {
+    if (!client.settings.get(message.guild.id, `botchannel`).includes(message.channel.id) && !message.member.hasPermission("ADMINISTRATOR")) {
+      let leftb = "";
+      for (let i = 0; i < client.settings.get(message.guild.id, `botchannel`).length; i++) {
+        leftb += "> " + "<#" + client.settings.get(message.guild.id, `botchannel`)[i] + ">\n"
+      }
+      return functions.embedbuilder(client, 5000, message, config.colors.no, `Not A Bot Channel`, `Please run this command in the bot channel listed below\n${leftb}`)
+    }
+  }
+
+
+  let args = message.content
+    .slice(matchedPrefix.length)
+    .trim()
+    .split(/ +/g);
+  let cmd = args.shift().toLowerCase();
+
+  if (cmd.length === 0) return;
+
+  let command =
+    client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
+
+  if (!message.guild.me.hasPermission("SEND_MESSAGES")) return;
+
+  if (!command)
+    return;
+
+  try {
+    if (command)
+        command.run(client, message, args);
+  } catch (error) {
+    return message.channel.send(`Something Went Wrong, Try Again Later!`);
+  };
 });
 
 client.login(process.env.TOKEN);
