@@ -4,7 +4,7 @@
   "Color": "RANDOM",
   "mongoURI": "mongodb+srv://Felix:pubgmobile2005@cluster0.k4x6p.mongodb.net/chatbot?retryWrites=true&w=majority",
   "cookie": "GPS=1; YSC=-ALChCSf9rc; VISITOR_INFO1_LIVE=kz1LGahr0y8; PREF=f4=4000000&tz=Asia.Kolkata; SID=BghiuwOaqotXu4PuKIRWwSPlH855uzXKRppwMljp_x7QWskDGmqJRW7wLIIue49C06Ncbg.; __Secure-1PSID=BghiuwOaqotXu4PuKIRWwSPlH855uzXKRppwMljp_x7QWskDfEQcabmPYnguzLVi1eIi_g.; __Secure-3PSID=BghiuwOaqotXu4PuKIRWwSPlH855uzXKRppwMljp_x7QWskD-cNtIbhNVWnONbIQa2IVEA.; HSID=AGHksbKYQYWsGY7Su; SSID=AD8E7rWNqB4n1GKi2; APISID=OcpviStVc5jTcQ-S/ACL7es9AJhDX_c_Yb; SAPISID=rcnv2g5pJHacvg60/A6Go0zLxHbXidV2wO; __Secure-1PAPISID=rcnv2g5pJHacvg60/…idV2wO; LOGIN_INFO=AFmmF2swRAIgEuEGXhMfmpQUoQ0RaApZ3DCqyAOJHVsgCdm9GMG46xgCIFKeEDT4RI4C7-c3mxHc7cZezzjg0i2sUoS1orHFo9aX:QUQ3MjNmeF92U1Jkd1Jnd3k4RzlfYzFnOWJ2UE5SNGp1RVlfeTRVTmxEb2FsYjQxSEkzQXFpTWZHUFByNWZWeVpKN1ZWZG1FSDRDRkdJNGhvVE9XX2ZicTlJWWI5dThEaTRONGptUnI5ejFTUTJJLXNPdGtJVHhHSk9POTllaldaRnlaY2pKZWJiX2dlUU80b3dYZ1pkTGZKREg5OVI1RzRn; SIDCC=AJi4QfEGE-ZGZsCSejsdR-A0g3IispIxz5PnYGK82WWV7ZiS0GhL9Jl1vo0x0VmYKFxWgob1zg; __Secure-3PSIDCC=AJi4QfFzQo4lymrcTCEJPS0r1vE_46AoY5PIkQNhDdYhrgcQvlraKDaM1hGH1DeDHNrUTthE0g",
-    "colors": {
+  "colors": {
     "yes" : "#C219D8",
     "no"  : "#FF264A",
     "rankyes": "#0EFFA0"
